@@ -1,23 +1,11 @@
-* {
-    box-sizing: border-box;
-    font-family: "Reboto";
-}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway";
     font-weight: bold;
 }
 
-a {
-    color: #F6E8EA !important;
-}
 
-a:hover {
-    background-image: linear-gradient(white, white);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    animation: line-under .5s 1 both;
-}
 
 @keyframes line-under {
     0% {
@@ -40,14 +28,21 @@ a:hover {
 
 .products .product {
     border-radius: 0;
-    margin: 0;
+    margin: 0px;
     background-image: none;
-    background-color: 'white';
+    background-color: white;
     text-align: center;
 }
 
 .product-img {
     width: 200px;
+    max-height: 200px;
+    transition: transform 1s ease-in;
+}
+
+.product-details-img {
+    max-height: 300px;
+    transition: transform 1s ease-in;
 }
 
 .block {
