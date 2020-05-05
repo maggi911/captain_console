@@ -30,5 +30,8 @@
         <a class="nav-link" href="{% url 'cart-index' %}">Cart</a>
       </li>
     </ul>
+{#        {% if user.is_authenticated %}#}
+{#            <img src="{{ user.profile.profile_image }}" class="profile-image"/>#}
+{#        {% endif %}#}
   </div>
 </nav>
