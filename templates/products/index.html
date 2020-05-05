@@ -3,6 +3,12 @@
     <br>
     <h2>Products</h2>
     <br>
+    <div class="input-group">
+        <input type="search" class="form-control" id="search-box" placeholder="Enter your search here..." />
+        <div class="input-group-btn">
+            <button type="button" id="search-btn" class="btn btn-default">Search</button>
+        </div>
+    </div>
     <div class="products">
         {% for product in products %}
             {% include "products/single_product.html" with product=product %}
