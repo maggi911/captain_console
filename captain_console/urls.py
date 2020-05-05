@@ -20,5 +20,6 @@ urlpatterns = [
     path("", include("homepage.urls")), # Not sure about this. I think we should use the homepage here
     path('admin/', admin.site.urls),
     path("products/", include("products.urls")),
-    path("cart/", include("cart.urls"))
+    path("cart/", include("cart.urls")),
+    path("user/", include("user.urls"))
 ]

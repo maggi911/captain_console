@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "products.apps.ProductsConfig",
     "homepage.apps.HomepageConfig",
-    "cart.apps.CartConfig"
+    "cart.apps.CartConfig",
+    "user.apps.UserConfig"
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+LOGIN_URL = "/user/login"
+LOGIN_REDIRECT_URL = "/"
