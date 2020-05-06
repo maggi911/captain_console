@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
+from cart.models import Cart
 from products.forms.product_form import ProductCreateForm, ProductUpdateForm
 from products.models import Product, ProductImage
 
