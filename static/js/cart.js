@@ -2,7 +2,6 @@
 const product_name = document.getElementById("product_name");
 const product_price = document.getElementById("product_price");
 const cart = document.getElementById("cart_items");
-const cart_review = document.getElementById("cart_items_review");
 //const product_image = document.getElementById("product_img").innerHTML;
 
 $("#add_to_cart").click(function(){
@@ -35,14 +34,5 @@ function populate_cart(type){
 function remove_from_cart(key){
     localStorage.removeItem(key);
     populate_cart("cart");
-}
-
-function populate_cart_review(){
-    cart_review.innerHTML = ""
-    for (let i = 0; i < localStorage.length; i++) {
-        const name = localStorage.key(i);
-        const price = localStorage.getItem(name);
-        cart_review.innerHTML += `${name}:&emsp; ${price}<br />`;
-    }
 }
 
