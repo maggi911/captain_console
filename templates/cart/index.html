@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
+    <body onload="populate_cart('cart');">
     <br>
-    <div class="card card-body bg-light product">
-        <h2>Cart</h2>
+    <div class="card">
+        <div class="card-header">
+            Cart
+        </div>
         <br>
-        <p id="cart_items"> </p>
+        <p id="cart_items" class="d-inline-block card-text"> </p>
     </div>
+    <a href="{% url "products-index" %}" class="btn btn-primary">Store</a>
+    <a href="{% url "payment-method" %}" class="btn btn-primary">Payment</a>
 {% endblock %}

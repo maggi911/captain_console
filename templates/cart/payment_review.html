@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <body onload="populate_cart('review');">
+    <br>
+    <div class="card">
+        <div class="card-header">
+            Review
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Items</h5>
+        </div>
+        <p id="cart_items" class="card-text"> </p>
+    </div>
+    <a href="{% url "payment-successful" %}" class="btn btn-primary">Confirm</a>
+{% endblock %}

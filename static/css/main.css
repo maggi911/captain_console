@@ -1,12 +1,4 @@
 
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
-    font-weight: bold;
-}
-
-
-
 @keyframes line-under {
     0% {
         background-size: 0px 3px;
@@ -47,4 +39,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .block {
     display: block;
+}
+
+.payment-img {
+    max-height: 50px;
 }
