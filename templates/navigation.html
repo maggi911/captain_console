@@ -13,7 +13,7 @@
       <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
       {% if user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'cart-index' %}">Profile</a>
+        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -30,8 +30,8 @@
           <a onclick="populate_cart(); return false;" id="open_cart" class="nav-link" href="{% url 'cart-index' %}">Cart</a>
       </li>
     </ul>
-{#        {% if user.is_authenticated %}#}
-{#            <img src="{{ user.profile.profile_image }}" class="profile-image"/>#}
-{#        {% endif %}#}
+        {% if user.is_authenticated %}
+            <img src="{{ user.profile.profile_image }}" class="rounded-circle profile-image"/>
+        {% endif %}
   </div>
 </nav>
