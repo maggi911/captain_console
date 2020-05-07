@@ -44,3 +44,11 @@
 .payment-img {
     max-height: 50px;
 }
+
+.margin-10 {
+    margin: 10px !important;
+}
+
+.padding-20 {
+    padding: 20px !important;
+}

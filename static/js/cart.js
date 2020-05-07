@@ -22,9 +22,13 @@ function populate_cart(type){
         console.log(price.slice(1))
         total_price += parseFloat(price.slice(1));
         if (type == "cart"){
-            cart.innerHTML += `${name}:&emsp; ${price}&emsp;<button id="${name}" type="button" class="btn btn-secondary btn-sm" onclick="remove_from_cart(id);">Remove</button> <br />`;
+            cart.innerHTML += `<p style="padding-left: 20px; font-weight: bold">${name}:</p>
+                                <button id="${name}" type="button" class="btn btn-secondary btn-sm float-right" style="margin-right: 20px" onclick="remove_from_cart(id);">Remove</button>
+                                <p style="padding-left: 20px;">${price}</p>                               
+                                <br>`;
         } else {
-            cart.innerHTML += `${name}:&emsp; ${price}<br />`;
+            cart.innerHTML += `<p style="padding-left: 20px; font-weight: bold">${name}:</p>
+                                <p style="padding-left: 20px;">${price}</p><br>`;
         }
     }
     console.log(total_price)

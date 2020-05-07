@@ -2,14 +2,17 @@
 {% block content %}
     <body onload="populate_cart('review');">
     <br>
-    <div class="card">
-        <div class="card-header">
-            Review
+    <div class="w-50 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Review
+            </div>
+            <br>
+            <div id="cart_items" class="col-sm-20">
+
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Items</h5>
-        </div>
-        <p id="cart_items" class="card-text"> </p>
+        <a href="{% url "payment-info" %}" class="btn btn-primary margin-10">Back</a>
+        <a href="{% url "payment-successful" %}" class="btn btn-primary float-right margin-10">Confirm</a>
     </div>
-    <a href="{% url "payment-successful" %}" class="btn btn-primary">Confirm</a>
 {% endblock %}
