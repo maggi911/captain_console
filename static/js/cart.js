@@ -11,10 +11,9 @@ $("#add_to_cart").click(function(){
     location.reload()
 })
 
-// type: review or cart
+// type: review or cart, show remove buttons if cart
 function populate_cart(type){
     cart.innerHTML = ""
-    //cart_review.innerHTML = ""
     var total_price = 0
     for (let i = 0; i < localStorage.length; i++) {
         const name = localStorage.key(i);
@@ -22,13 +21,13 @@ function populate_cart(type){
         console.log(price.slice(1))
         total_price += parseFloat(price.slice(1));
         if (type == "cart"){
-            cart.innerHTML += `<p style="padding-left: 20px; font-weight: bold">${name}:</p>
-                                <button id="${name}" type="button" class="btn btn-secondary btn-sm float-right" style="margin-right: 20px" onclick="remove_from_cart(id);">Remove</button>
-                                <p style="padding-left: 20px;">${price}</p>                               
+            cart.innerHTML += `<p class="padding-l-20 font-weight-bold">${name}:</p>
+                                <button id="${name}" type="button" class="btn btn-secondary btn-sm float-right margin-r-20" onclick="remove_from_cart(id);">Remove</button>
+                                <p class="padding-l-20">${price}</p>                               
                                 <br>`;
         } else {
-            cart.innerHTML += `<p style="padding-left: 20px; font-weight: bold">${name}:</p>
-                                <p style="padding-left: 20px;">${price}</p><br>`;
+            cart.innerHTML += `<p class="padding-l-20 font-weight-bold">${name}:</p>
+                                <p class="padding-l-20">${price}</p><br>`;
         }
     }
     console.log(total_price)
