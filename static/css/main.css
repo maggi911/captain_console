@@ -60,3 +60,12 @@
 .padding-l-20 {
     padding-left: 20px !important;
 }
+
+.pay-btn-margin {
+    margin-top: -10px !important;
+    margin-left: 10px !important;
+}
+
+.required-text {
+    color: red;
+}

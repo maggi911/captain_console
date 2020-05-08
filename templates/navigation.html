@@ -36,7 +36,7 @@
       </li>
         {% endif %}
       <li class="nav-item">
-          <a onclick="populate_cart(); return false;" id="open_cart" class="nav-link" href="{% url 'cart-index' %}">Cart</a>
+          <a id="open_cart" class="nav-link" href="{% url 'cart-index' %}">Cart</a>
       </li>
     </ul>
         {% if user.is_authenticated %}

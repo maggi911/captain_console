@@ -4,48 +4,54 @@
     <div class="w-50 mx-auto">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Payment Info</h4>
+                Payment Info
             </div>
             <br>
             <form class="needs-validation" novalidate>
-                <div class="row" style="padding: 20px;">
+                <div class="row padding-20">
                       <div class="col-md-6 mb-3">
                         <label for="cc-name">Name on card</label>
-                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                        <input type="text" class="form-control" id="cc-name" oninput="return no_num(id);" placeholder="" required="">
                         <small class="text-muted">Full name as displayed on card</small>
-                        <div class="invalid-feedback">
-                          Name on card is required
+                        <div id="name-req" class="required-text">
+
                         </div>
                       </div>
                       <div class="col-md-6 mb-3">
                         <label for="cc-number">Credit card number</label>
-                        <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                        <div class="invalid-feedback">
-                          Credit card number is required
+                        <input type="text" class="form-control" id="cc-number" placeholder="" oninput="return only_num(id);" required="" maxlength="16">
+                        <div id="number-req" class="required-text">
+
                         </div>
                       </div>
                     </div>
-                    <div class="row" style="padding-left: 20px;">
+                    <div class="row padding-l-20">
                       <div class="col-md-3 mb-3">
-                        <label for="cc-expiration">Expiration</label>
-                        <input type="text" class="form-control" id="cc-expiration" placeholder="mm/yy" required="">
-                        <div class="invalid-feedback">
-                          Expiration date required
+                        <label for="cc-expiration">Month</label>
+                        <input type="text" class="form-control" id="cc-month" placeholder="mm" oninput="return only_num(id);" required="" maxlength="2">
+                          <div id="month-req" class="required-text">
+
+                        </div>
+                      </div>
+                        <div class="col-md-3 mb-3">
+                        <label for="cc-expiration">Year</label>
+                        <input type="text" class="form-control" id="cc-year" placeholder="yy" oninput="return only_num(id);" required="" maxlength="2">
+                          <div id="year-req" class="required-text">
+
                         </div>
                       </div>
                       <div class="col-md-3 mb-3">
                         <label for="cc-expiration">CVV</label>
-                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                        <div class="invalid-feedback">
-                          Security code required
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="123" oninput="return only_num(id);" required="" maxlength="3">
+                        <div id="cvv-req" class="required-text">
+
                         </div>
                       </div>
                     </div>
-                <a href="{% url "payment-method" %}" class="btn btn-primary" style="margin: 20px;">Back</a>
-                <a href="{% url "payment-review" %}" class="btn btn-primary float-right" style="margin: 20px;">Continue</a>
+                <hr class="mb-4">
+                <a href="{% url "payment-method" %}" class="btn btn-primary" style="margin-top: -13px; margin-left: 10px; margin-bottom: 10px;">Back</a>
+                <a  id="pay-btn" onclick="check_valid_input();" href="#" class="btn btn-primary float-right" style="margin-top: -13px; margin-right: 10px;">Continue</a>
             </form>
-
         </div>
-
     </div>
 {% endblock %}

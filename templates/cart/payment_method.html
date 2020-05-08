@@ -2,24 +2,24 @@
 {% block content %}
     <br>
     <div class="w-50 mx-auto">
-    <div class="card">
-        <div class="card-header">
-            <h4 class="card-title">Payment Method</h4>
+        <div class="card">
+            <div class="card-header">
+                Payment Method
+            </div>
+            <br>
+            <div class="col-sm-15 padding-20">
+                <img class="payment-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"/>
+                <h5 class="d-inline-block padding-l-20">Mastercard</h5>
+                <a href="{% url "payment-info" %}" class="btn btn-primary float-right">Choose</a>
+            </div>
+            <br>
+            <div class="col-sm-15 padding-20">
+                <img class="payment-img" src="https://usa.visa.com/dam/VCOM/regional/lac/ENG/Default/Partner%20With%20Us/Payment%20Technology/visapos/full-color-800x450.jpg"/>
+                <h5 class="d-inline-block padding-l-20">Visa</h5>
+                <a href="{% url "payment-info" %}" class="btn btn-primary float-right">Choose</a>
+            </div>
+            <br>
         </div>
-        <br>
-        <div class="col-sm-15 padding-20">
-            <img class="payment-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"/>
-            <h4 class="d-inline-block">Mastercard</h4>
-            <a href="{% url "payment-info" %}" class="btn btn-primary float-right">Choose</a>
-        </div>
-        <br>
-        <div class="col-sm-15 padding-20">
-            <img class="payment-img" src="https://usa.visa.com/dam/VCOM/regional/lac/ENG/Default/Partner%20With%20Us/Payment%20Technology/visapos/full-color-800x450.jpg"/>
-            <h4 class="d-inline-block">Visa</h4>
-            <a href="{% url "payment-info" %}" class="btn btn-primary float-right">Choose</a>
-        </div>
-        <br>
-    </div>
-    <a href="{% url "cart-index" %}" class="btn btn-primary margin-10">Back</a>
+        <a href="{% url "cart-index" %}" class="btn btn-primary margin-10">Back</a>
     </div>
 {% endblock %}
