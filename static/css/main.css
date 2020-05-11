@@ -1,3 +1,10 @@
+.profile-img {
+
+    max-width: 100px;
+    max-height: 80px;
+    margin: 30px;
+}
+
 .div-fp-img {
     display: flex;
     flex-direction: row;
@@ -104,4 +111,9 @@
 
 .required-text {
     color: red;
+}
+
+.small-profile-image {
+    max-width: 10px !important;
+    max-height: 10px !important;
 }

@@ -12,10 +12,12 @@
                 <br>
                 <p class="margin-10"><b>First name: </b>{{ user.first_name }}</p>
                 <p class="margin-10"><b>Last name: </b>{{ user.last_name }}</p>
-                <p class="margin-10"><b>Profile image: </b></p><img href="{{ user.profile.profile_image }}">
+                <p class="margin-10"><b>Profile image: </b></p>
+                <img class="profile-img" src="{{ user.profile.profile_image }}"/>
             </div>
+            <a href="{% url 'edit_profile' %}" class="btn btn-primary float-right margin-10">Edit profile</a>
         </div>
-        <a href="{% url 'edit_profile' %}" class="btn btn-primary float-right margin-10">Edit profile</a>
+
         <br>
     </div>
     <br>
