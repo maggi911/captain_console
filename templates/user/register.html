@@ -1,16 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
     <br>
-    <h1>Sign up now!</h1>
-    <br>
+    <div class="w-50 mx-auto">
+        <div class="card">
+            <div class="card-header">Sign up now!</div>
+            <br>
     <form class="form form-horizontal" method="post">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="btn btn-primary" value="Sign up" />
+        {% for field in form %}
+        <p class="margin-10">
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {% if field.help_text %}
+                <small style="color: gray">{{ field.help_text | safe }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+                <p style="color: red">{{ error | safe }}</p>
+            {% endfor %}
+        </p>
+        {% endfor %}
+        <input type="submit" class="btn btn-primary float-right margin-10" value="Sign up" />
     </form>
     <div class="border-top pt-3">
         <small class="text-muted">
             Already have an account? <a class="ml-2" href="{% url 'login' %}">Login</a>
         </small>
     </div>
+    </div>
+        </div>
+
+
 {% endblock %}
