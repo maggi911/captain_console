@@ -8,13 +8,14 @@
                 </div>
                 <br>
                 <div class="col-sm-20">
-                    {% csrf_token %}
-                    {{ form }}
                     <form method="post" class="form-group">
-                    <input type="submit" class="btn btn-primary margin-10 float-right" value="Login" />
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" class="btn btn-primary margin-10 float-right" value="Login" />
+                    </form>
                 </div>
             </div>
         </div>
         <br>
-    </form>
+
 {% endblock %}
