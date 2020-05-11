@@ -1,32 +1,40 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
-from user.models import Profile
+from django.shortcuts import render, redirect, get_object_or_404
+#from user.models import ProfileImage
+from django.contrib.sessions.models import Session
+from django.contrib.auth.models import User
 from user.forms.profile_form import ProfileForm
-from user.forms.register import RegisterForm
+from user.forms.register import RegisterForm, EditProfileForm
 
 
 # Create your views here.
 def register(request):
     if request.method == "POST":
         form = RegisterForm(data=request.POST)
-        #form = UserCreationForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            profile_image = ProfileForm(profile_image=request.POST["profile_image"], user=user)
+            profile_image.save()
             return redirect("login")
     return render(request, "user/register.html", {
         "form": RegisterForm()
-        #"form": UserCreationForm()
     })
 
-def profile(request):
-    profile = Profile.objects.filter(user=request.user).first()
-    if request.method == 'POST':
-        form = ProfileForm(instance=profile, data=request.POST)
-        if form.is_valid():
-            profile = form.save(commit=False)
-            profile.user = request.user
-            profile.save()
-            return redirect('profile')
-    return render(request,'user/profile.html', {
-        'form': ProfileForm(instance=profile)
+def get_user_by_id(request):
+    return render(request, "user/profile.html", {
+        "user": get_object_or_404(User, pk=request.user.id)
     })
+
+def edit_profile(request):
+    instance = get_object_or_404(User, pk=request.user.id)
+    if request.method == "POST":
+        form = EditProfileForm(data=request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect("profile")
+    else:
+        form = EditProfileForm(instance=instance)
+    return render(request, "user/edit_profile.html", {
+        "form": form,
+        "id": request.user.id
+    })
+
