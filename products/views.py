@@ -20,6 +20,19 @@ def index(request):
     context = {"products": Product.objects.all().order_by("name")}
     return render(request, "products/index.html", context)
 
+def sort_by_price(request):
+    if "search_filter" in request.GET:
+        search_filter = request.GET["search_filter"]
+        products = [ {
+            "id": x.id,
+            "name": x.name,
+            "description": x.description,
+            "image": x.productimage_set.first().image
+        } for x in Product.objects.filter(name__icontains=search_filter)]
+        return JsonResponse({"data": products})
+    context = {"products": Product.objects.all().order_by("price")}
+    return render(request, "products/index.html", context)
+
 # /products/id
 def get_product_by_id(request, id):
     return render(request, "products/product_details.html", {
