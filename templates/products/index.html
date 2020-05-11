@@ -9,8 +9,24 @@
                   Order by
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="{{ request.path }}/sort_by_name">Name</a>
-              <a class="dropdown-item" href="{{ request.path }}/sort_by_price">Price</a>
+                {% if request.path == "/products/games/sort_by_price" %}
+                    <a class="dropdown-item" href="{% url 'sort-games-by-name' %} ">Name</a>
+                {% elif request.path == "/products/consoles/sort_by_price" %}
+                    <a class="dropdown-item" href="{% url 'sort-consoles-by-name' %} ">Name</a>
+                {% elif request.path == "/products//sort_by_price" %}
+                    <a class="dropdown-item" href="{% url 'sort-by-name' %} ">Name</a>
+                {% else %}
+                    <a class="dropdown-item" href="{{ request.path }}/sort_by_name">Name</a>
+                {% endif %}
+                {% if request.path == "/products/games/sort_by_name" %}
+                    <a class="dropdown-item" href="{% url 'sort-games-by-price' %} ">Price</a>
+                {% elif request.path == "/products/consoles/sort_by_name" %}
+                    <a class="dropdown-item" href="{% url 'sort-consoles-by-price' %} ">Price</a>
+                {% elif request.path == "/products//sort_by_name" %}
+                    <a class="dropdown-item" href="{% url 'sort-by-price' %} ">Price</a>
+                {% else %}
+                    <a class="dropdown-item" href="{{ request.path }}/sort_by_price">Price</a>
+                {% endif %}
             </div>
         </div>
         <div class="btn-group">
