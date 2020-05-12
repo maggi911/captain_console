@@ -16,7 +16,7 @@
                         <div id="name-req" class="required-text">
 
                         </div>
-                      </div>
+                        </div>
                       <div class="col-md-6 mb-3">
                         <label for="cc-number">Credit card number</label>
                         <input type="text" class="form-control" id="cc-number" placeholder="" oninput="return only_num(id);" required="" maxlength="16">
@@ -49,7 +49,7 @@
                       </div>
                     </div>
                 <hr class="mb-4">
-                <a href="{% url "payment-method" %}" class="btn btn-primary" style="margin-top: -13px; margin-left: 10px; margin-bottom: 10px;">Back</a>
+                <a href="{% url "payment-contact" %}" class="btn btn-primary" style="margin-top: -13px; margin-left: 10px; margin-bottom: 10px;">Back</a>
                 <a  id="pay-btn" onclick="check_valid_input();" href="#" class="btn btn-primary float-right" style="margin-top: -13px; margin-right: 10px;">Continue</a>
             </form>
         </div>

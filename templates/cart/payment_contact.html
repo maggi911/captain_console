@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+    <div class="w-50 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Contact Information
+            </div>
+            <br>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="cc-name">Full name</label>
+                        <input type="text" class="form-control" id="cc-name" oninput="return no_num(id);" placeholder="" required="">
+                        <div id="name-req" class="required-text">
+
+                        </div>
+                      </div>
+                </div>
+                <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="cc-name">Street address</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                        <div id="name-req" class="required-text">
+
+                        </div>
+                      </div>
+                </div>
+                <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="cc-name">City</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                        <div id="name-req" class="required-text">
+
+                        </div>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="country">Country</label>
+                        <select onclick="display_countries()" id="country" name="country" class="form-control"></select>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <a href="{% url "payment-method" %}" class="btn btn-primary" style="margin-top: -13px; margin-left: 10px; margin-bottom: 10px;">Back</a>
+                <a  href="{% url "payment-info" %}" class="btn btn-primary float-right" style="margin-top: -13px; margin-right: 10px;">Continue</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

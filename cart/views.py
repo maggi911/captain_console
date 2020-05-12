@@ -7,6 +7,9 @@ def index(request):
 def payment_method(request):
     return render(request, "cart/payment_method.html")
 
+def payment_contact(request):
+    return render(request, "cart/payment_contact.html")
+
 def payment_info(request):
     return render(request, "cart/payment_info.html")
 
