@@ -3,7 +3,6 @@ const product_name = document.getElementById("product_name");
 const product_price = document.getElementById("product_price");
 const cart = document.getElementById("cart_items");
 const payment_btn = document.getElementById("payment-btn");
-//const product_image = document.getElementById("product_img").innerHTML;
 
 $("#add_to_cart").click(function(){
     const name = product_name.innerHTML;
