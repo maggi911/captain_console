@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+    <body onload="display_countries();">
     <br>
     <div class="w-50 mx-auto">
         <div class="card">
@@ -8,43 +9,44 @@
             </div>
             <br>
             <form class="needs-validation" novalidate>
-                <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="cc-name">Full name</label>
-                        <input type="text" class="form-control" id="cc-name" oninput="return no_num(id);" placeholder="" required="">
-                        <div id="name-req" class="required-text">
+                <div class="row padding-l-20">
+                      <div class="col-md-11 mb-3">
+                        <label for="contact-name">Full name</label>
+                        <input type="text" class="form-control" id="contact-name" oninput="return no_num(id);" placeholder="" required="">
+                        <div id="cn-req" class="required-text">
 
                         </div>
                       </div>
                 </div>
-                <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="cc-name">Street address</label>
-                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                        <div id="name-req" class="required-text">
+                <div class="row padding-l-20">
+                      <div class="col-md-11 mb-3">
+                        <label for="contact-address">Street address</label>
+                        <input type="text" class="form-control" id="contact-address" placeholder="" required="">
+                        <div id="ca-req" class="required-text">
 
                         </div>
                       </div>
                 </div>
-                <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="cc-name">City</label>
-                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                        <div id="name-req" class="required-text">
+                <div class="row padding-l-20">
+                      <div class="col-md-11 mb-3">
+                        <label for="contact-city">City</label>
+                        <input type="text" class="form-control" id="contact-city" placeholder="" required="">
+                        <div id="ccity-req" class="required-text">
 
                         </div>
                       </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
+                <div class="row padding-l-20">
+                    <div class="col-md-11 mb-3">
                         <label for="country">Country</label>
-                        <select onclick="display_countries()" id="country" name="country" class="form-control"></select>
+                        <select id="country" name="country" class="form-control"></select>
                     </div>
                 </div>
                 <hr class="mb-4">
                 <a href="{% url "payment-method" %}" class="btn btn-primary" style="margin-top: -13px; margin-left: 10px; margin-bottom: 10px;">Back</a>
-                <a  href="{% url "payment-info" %}" class="btn btn-primary float-right" style="margin-top: -13px; margin-right: 10px;">Continue</a>
+                <a id="go-to-payment" onclick="check_contact_input();" href="#" class="btn btn-primary float-right" style="margin-top: -13px; margin-right: 10px;">Continue</a>
             </form>
         </div>
     </div>
+    <br>
 {% endblock %}

@@ -1,6 +1,5 @@
 
 function display_countries() {
-    console.log("hi")
     var country_list = document.getElementById("country");
     country_list.innerHTML = `<option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>

@@ -11,6 +11,11 @@ $("#add_to_cart").click(function(){
     location.reload()
 })
 
+$("#clear_cart").click(function(){
+    console.log("here")
+    localStorage.clear();
+})
+
 // type: review or cart, show remove buttons if cart
 function populate_cart(type){
     cart.innerHTML = ""
@@ -18,7 +23,6 @@ function populate_cart(type){
     for (let i = 0; i < localStorage.length; i++) {
         const name = localStorage.key(i);
         const price = localStorage.getItem(name);
-        console.log(price.slice(1))
         total_price += parseFloat(price.slice(1));
         if (type == "cart"){
             cart.innerHTML += `<p class="padding-l-20 font-weight-bold">${name}:</p>
@@ -30,7 +34,6 @@ function populate_cart(type){
                                 <p class="padding-l-20">${price}</p><br>`;
         }
     }
-    console.log(total_price)
     cart.innerHTML += `<div class="card-footer text-muted"> Total price: &emsp;` + "$" + `${total_price.toFixed(2)}</div>`;
 }
 
@@ -38,4 +41,3 @@ function remove_from_cart(key){
     localStorage.removeItem(key);
     populate_cart("cart");
 }
-
