@@ -4,7 +4,7 @@ from django import forms
 from django.forms import ModelForm, widgets
 
 class RegisterForm(UserCreationForm):
-    profile_image = forms.CharField(required=True, widget=forms.TextInput(attrs={ "class": "form-control"}))
+    profile_image = forms.CharField(required=True, widget=forms.TextInput(attrs={ "class": "form-control"}), max_length=9999)
 
     class Meta:
         model = User
@@ -12,7 +12,7 @@ class RegisterForm(UserCreationForm):
 
 
 class EditProfileForm(ModelForm):
-    profile_image = forms.CharField(required=True, widget=forms.TextInput(attrs={"class": "form-control"}))
+    profile_image = forms.CharField(required=True, widget=forms.TextInput(attrs={"class": "form-control"}), max_length=9999)
     class Meta:
         model = User
         widgets = {

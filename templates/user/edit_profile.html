@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     <br>
-    <h1>Edit Profile</h1>
+    <div class="card w-50 mx-auto">
+      <h5 class="card-header">Edit profile</h5>
+      <div class="card-body">
+        <form class="form form-horizontal" action="{% url 'edit_profile' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Update" class="btn btn-primary pull-right" style="clear:both; margin: 10px 0" />
+        </form>
+      </div>
+    </div>
     <br>
-    <form class="form form-horizontal" action="{% url 'edit_profile' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Update" class="btn btn-primary pull-right" style="clear:both; margin: 10px 0" />
-    </form>
 {% endblock %}
