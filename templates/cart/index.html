@@ -8,11 +8,11 @@
                 Cart
             </div>
             <br>
-            <d0iv id="cart_items" class="col-sm-20">
+            <div id="cart_items" class="col-sm-20">
 
-            </d0iv>
+            </div>
         </div>
         <a href="{% url "products-index" %}" class="btn btn-primary margin-10">Store</a>
-        <a href="{% url "payment-method" %}" class="btn btn-primary margin-10 float-right">Payment</a>
+        <a id="payment-btn" href="{% url "payment-method" %}" class="btn btn-primary margin-10 float-right" style="display: none;">Payment</a>
     </div>
 {% endblock %}

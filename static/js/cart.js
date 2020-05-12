@@ -2,6 +2,7 @@
 const product_name = document.getElementById("product_name");
 const product_price = document.getElementById("product_price");
 const cart = document.getElementById("cart_items");
+const payment_btn = document.getElementById("payment-btn");
 //const product_image = document.getElementById("product_img").innerHTML;
 
 $("#add_to_cart").click(function(){
@@ -12,7 +13,6 @@ $("#add_to_cart").click(function(){
 })
 
 $("#clear_cart").click(function(){
-    console.log("here")
     localStorage.clear();
 })
 
@@ -35,6 +35,12 @@ function populate_cart(type){
         }
     }
     cart.innerHTML += `<div class="card-footer text-muted"> Total price: &emsp;` + "$" + `${total_price.toFixed(2)}</div>`;
+
+    if (total_price){
+        payment_btn.style.display = "inline";
+    } else {
+        payment_btn.style.display = "none";
+    }
 }
 
 function remove_from_cart(key){
