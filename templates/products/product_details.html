@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 id="product_name">{{ product.name }}</h1>
-    <p>Category: {{ product.category.name }}</p>
-    <p>{{ product.description }}</p>
-    <p id="product_price">${{ product.price }}</p>
-    {% for product_image in product.productimage_set.all %}
-        <img src="{{ product_image.image }}" class="product-details-img"/>
-    {% endfor %}
-
-    <a href="{% url "delete_product" product.id%}" class="block btn btn-primary">Delete product</a>
-    <a href="{% url "update_product" product.id%}" class="block btn btn-primary">Update product</a>
-    <a href="" id="add_to_cart" class="block btn btn-primary">Add product to cart</a>
-
+    <br>
+    <div class="card mx-auto" style="width: 50rem;">
+      <div class="card-body">
+        <h5 id="product_name" class="card-title">{{ product.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Category: {{ product.category.name }}</h6>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">${{ product.price }}</p>
+        {% for product_image in product.productimage_set.all %}
+            <img src="{{ product_image.image }}" class="product-details-img"/>
+        {% endfor %}
+        <br>
+        <br>
+        <a href="" id="add_to_cart" class="card-link">Add to cart</a>
+        <a href="{% url "delete_product" product.id%}" class="card-link">Delete product</a>
+        <a href="{% url "update_product" product.id%}" class="card-link">Update product</a>
+      </div>
+    </div>
+    <br>
 {% endblock %}
