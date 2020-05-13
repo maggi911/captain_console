@@ -9,3 +9,9 @@ def aboutus(request):
 
 def contactus(request):
     return render(request, "homepage/contactus.html")
+
+def terms(request):
+    return render(request, "homepage/terms.html")
+
+def privacypolicy(request):
+    return render(request, "homepage/privacypolicy.html")
