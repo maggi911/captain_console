@@ -13,6 +13,9 @@
       <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
       {% if user.is_authenticated %}
       <li class="nav-item">
+        <a class="nav-link" href="{% url 'history-index' %}">Search history</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{% url 'profile' %}">Profile</a>
       </li>
       <li class="nav-item">
