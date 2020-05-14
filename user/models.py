@@ -5,7 +5,6 @@ from django.db import models
 # Create your models here.
 class Profile(models.Model):
     profile_image = models.CharField(max_length=9999)
-    # profile_image = models.ImageField(upload_to="profile_image")
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):

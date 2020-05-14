@@ -6,7 +6,7 @@ function only_num(e_id){
 
     if (res != ""){
         if (isNaN(res)){
-            elem.value = "";
+            elem.value = res.slice(0, -1);
             return false;
         }
     }

@@ -34,7 +34,9 @@
       </li>
     </ul>
         {% if user.is_authenticated %}
-            <img src="{{ user.profile.profile_image }}" class="rounded-circle profile-image" style="max-height: 20px; max-width: 20px;"/>
+            <a href="{% url 'profile' %}">
+                <img src="{{ user.profile.profile_image }}" class="rounded-circle profile-image" style="max-height: 20px; max-width: 20px;"/>
+            </a>
         {% endif %}
   </div>
 </nav>
