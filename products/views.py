@@ -16,6 +16,7 @@ def index(request):
             "id": x.id,
             "name": x.name,
             "description": x.description,
+            "price": x.price,
             "image": x.productimage_set.first().image
         } for x in Product.objects.filter(name__icontains=search_filter)]
         return JsonResponse({"data": products})
@@ -29,6 +30,7 @@ def sort_all_by_price(request):
             "id": x.id,
             "name": x.name,
             "description": x.description,
+            "price": x.price,
             "image": x.productimage_set.first().image
         } for x in Product.objects.filter(name__icontains=search_filter)]
         return JsonResponse({"data": products})
