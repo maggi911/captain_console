@@ -4,8 +4,8 @@ from . import views
 urlpatterns = [
     # localhost:8000/products
     path('', views.index, name="products-index"),
-    path('/sort_by_price', views.sort_all_by_price, name="sort-by-price"),
-    path('/sort_by_name', views.index, name="sort-by-name"),
+    path('sort_by_price', views.sort_all_by_price, name="sort-by-price"),
+    path('sort_by_name', views.index, name="sort-by-name"),
     path('games/sort_by_price', views.sort_games_by_price, name="sort-games-by-price"),
     path('consoles/sort_by_price', views.sort_consoles_by_price, name="sort-consoles-by-price"),
     path('games/sort_by_name', views.sort_games_by_name, name="sort-games-by-name"),
