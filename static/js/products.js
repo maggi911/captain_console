@@ -12,7 +12,7 @@ $(document).ready(function() {
                                     <img class="product-img" src="${d.image}" />
                                     <h4>${d.name}</h4>
                                     <p>${d.description}</p>
-                                    <p>${d.price}</p>
+                                    <p>$${d.price}</p>
                                 </a>
                             </div>`
                 });

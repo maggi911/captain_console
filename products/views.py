@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
-from cart.models import Cart
 from history.models import UserHistory
 from products.forms.product_form import ProductCreateForm, ProductUpdateForm
 from products.models import Product, ProductImage
@@ -52,12 +51,14 @@ def get_all_games(request):
     return render(request, "products/index.html", context)
 
 # /products/id
+# first check if a user is logged in, then store that product in the user search history
 def get_product_by_id(request, id):
     if request.user.id:
         user = get_object_or_404(User, pk=request.user.id)
         product = get_object_or_404(Product, pk=id)
         h = {"history": UserHistory.objects.all().filter(user_id=request.user.id)}
         l = [i.product_id for i in h["history"]]
+
         if id not in l:
             user_history = UserHistory(user=user, product=product)
             user_history.save()

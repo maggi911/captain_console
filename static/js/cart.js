@@ -8,17 +8,18 @@ $("#add_to_cart").click(function(){
     const name = product_name.innerHTML;
     const price = product_price.innerHTML;
     localStorage.setItem(name, price);
-    location.reload()
+    location.reload();
 })
 
 $("#clear_cart").click(function(){
     localStorage.clear();
 })
 
-// type: review or cart, show remove buttons if cart
+// type is either review or cart. Display remove buttons if type is cart
 function populate_cart(type){
-    cart.innerHTML = ""
-    var total_price = 0
+    cart.innerHTML = "";
+    var total_price = 0;
+
     for (let i = 0; i < localStorage.length; i++) {
         const name = localStorage.key(i);
         const price = localStorage.getItem(name);
