@@ -117,3 +117,8 @@
     max-width: 10px !important;
     max-height: 10px !important;
 }
+
+.login-btn-margin {
+    margin-right: 30px !important;
+    margin-top: 20px !important;
+}

@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+handler404 = 'captain_console.views.handler404'
+handler500 = 'captain_console.views.handler500'
+
 urlpatterns = [
-    path("", include("homepage.urls")), # Not sure about this. I think we should use the homepage here
+    path("", include("homepage.urls")),
     path('admin/', admin.site.urls),
     path("products/", include("products.urls")),
     path("cart/", include("cart.urls")),

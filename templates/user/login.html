@@ -1,54 +1,24 @@
-{#{% extends "base.html" %}#}
-{##}
-{#{% block content %}#}
-{#        <br>#}
-{#        <div class="w-50 mx-auto">#}
-{#            <div class="card">#}
-{#                <div class="card-header">#}
-{#                    Log in#}
-{#                </div>#}
-{#                <br>#}
-{#                <div class="col-sm-20">#}
-{#                    <form method="post" class="form-group margin-10">#}
-{#                        {% csrf_token %}#}
-{#                        {{ form}}#}
-{#                        <input type="submit" class="btn btn-primary margin-10 float-right" value="Login" />#}
-{#                    </form>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="border-top pt-3">#}
-{#                <small class="text-muted">#}
-{#                     Need an account? <a class="ml-2" href="{% url 'register' %}">Sign up</a>#}
-{#                </small>#}
-{#            </div>#}
-{#        </div>#}
-{#        <br>#}
-{##}
-{#{% endblock %}#}
-
 {% extends "base.html" %}
-
 {% block content %}
-
         <br>
-        <div class="content-section">
-            <form method="POST">
-                {% csrf_token %}
-                <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Log in</legend>
-                    {{ form }}
-                </fieldset>
-                <br>
-                <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Log in</button>
+        <div class="mx-auto" style="width: 250px">
+            <div class="card">
+                <div class="card-header">
+                    Log in
                 </div>
-            </form>
-            <div class="border-top pt-3">
-                <small class="text-muted">
+                <br>
+                <div class="col-sm-30">
+                    <form method="post" class="form-group padding-l-20">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" class="btn btn-primary float-right" style="margin: 20px;" value="Login"/>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
                      Need an account? <a class="ml-2" href="{% url 'register' %}">Sign up</a>
-                </small>
+                </div>
             </div>
         </div>
-        <br>
-
+       <br>
 {% endblock %}
+
